@@ -1,5 +1,7 @@
 package ru.job4j.tracker;
 
+import java.time.format.DateTimeFormatter;
+
 public class FindByIdAction implements UserAction {
     @Override
     public String name() {
@@ -10,7 +12,7 @@ public class FindByIdAction implements UserAction {
         name();
             String id = input.askStr("Enter id: ");
                 Item item = tracker.findById(id);
-                System.out.println(" Successful! " + System.lineSeparator() + item.getId() + " " + item.getName());
+                System.out.println(" Successful! " + System.lineSeparator() + item.getId() + " " + item.getName() + " " + item.getCreated().format(DateTimeFormatter.ofPattern("dd-MMMM-EEEE-yyyy HH:mm:ss")));
         return true;
     }
 }

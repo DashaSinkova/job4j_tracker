@@ -1,5 +1,6 @@
 package ru.job4j.tracker;
 
+import java.time.format.DateTimeFormatter;
 import java.util.List;
 
 public class FindItemsByNameAction implements UserAction {
@@ -15,7 +16,7 @@ public class FindItemsByNameAction implements UserAction {
             if (arr.size() != 0) {
                 System.out.println(" Successful! ");
                 for (Item item : arr) {
-                    System.out.println(item.getId() + " " + item.getName());
+                    System.out.println(item.getId() + " " + item.getName() + " " + item.getCreated().format(DateTimeFormatter.ofPattern("dd-MMMM-EEEE-yyyy HH:mm:ss")));
                 }
             } else {
                 System.out.println("Array is empty or you input incorrect symbol");
