@@ -7,8 +7,8 @@ public class DeleteAction implements UserAction {
     }
 
     @Override
-    public boolean execute(Input input, Tracker tracker) {
-        String id = input.askStr("Enter id: ");
+    public boolean execute(Input input, MemTracker tracker) {
+        int id = Integer.valueOf(input.askStr("Enter id: "));
         if (tracker.delete(id)) {
             System.out.println("Deleted completed successfully");
         } else {

@@ -8,7 +8,7 @@
 //    public void whenAddItem() {
 //            String[] answers = {"Fix PC"};
 //            Input input = new StubInput(answers);
-//            Tracker tracker = new Tracker();
+//            MemTracker tracker = new MemTracker();
 //            StartUI.createItem(input, tracker);
 //            Item created = tracker.findAll()[0];
 //            Item expected = new Item("Fix PC");
@@ -16,7 +16,7 @@
 //        }
 //        @Test
 //    public void whenReplace() {
-//        Tracker tracker = new Tracker();
+//        MemTracker tracker = new MemTracker();
 //        Item item = new Item("new item");
 //        tracker.add(item);
 //        String[] answers = {item.getId(), "replaced item"};
@@ -26,7 +26,7 @@
 //        }
 //        @Test
 //    public void whenDelete() {
-//            Tracker tracker = new Tracker();
+//            MemTracker tracker = new MemTracker();
 //            Item item = new Item("new item");
 //            tracker.add(item);
 //            String[] answers = {item.getId()};

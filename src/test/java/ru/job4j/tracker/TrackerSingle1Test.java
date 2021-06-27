@@ -9,8 +9,8 @@ import static org.hamcrest.core.Is.*;
 public class TrackerSingle1Test {
     @Test
     public void when1object() {
-        Tracker tracker = TrackerSingle1.getInstance();
-        Tracker trackerTest = TrackerSingle1.getInstance();
+        MemTracker tracker = TrackerSingle1.getInstance();
+        MemTracker trackerTest = TrackerSingle1.getInstance();
         tracker.add(new Item("Даша"));
         assertThat(tracker.findAll(), is(trackerTest.findAll()));
     }

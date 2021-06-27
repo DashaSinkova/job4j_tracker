@@ -5,8 +5,8 @@ package ru.job4j.tracker;
  */
 public enum  TrackerSingle2 {
     INSTANCE;
-    private final Tracker instance = new Tracker();
-    public Tracker getInstance() {
+    private final MemTracker instance = new MemTracker();
+    public MemTracker getInstance() {
         return instance;
     }
 }

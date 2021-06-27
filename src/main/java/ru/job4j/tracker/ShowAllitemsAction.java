@@ -1,7 +1,5 @@
 package ru.job4j.tracker;
 
-import java.time.format.DateTimeFormatter;
-import java.time.format.DateTimeFormatterBuilder;
 import java.util.List;
 
 public class ShowAllitemsAction implements UserAction {
@@ -11,12 +9,12 @@ public class ShowAllitemsAction implements UserAction {
     }
 
     @Override
-    public boolean execute(Input input, Tracker tracker) {
+    public boolean execute(Input input, MemTracker tracker) {
         name();
         List<Item> items = tracker.findAll();
         if (items.size() != 0) {
             for (Item item : items) {
-                System.out.println(item.getId() + " " + item.getName() + " " + item.getCreated().format(DateTimeFormatter.ofPattern("dd-MMMM-EEEE-yyyy HH:mm:ss")));
+                System.out.println(item.toString());
             }
         } else {
             System.out.println("Array is empty");

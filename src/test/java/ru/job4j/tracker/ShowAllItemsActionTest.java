@@ -5,7 +5,6 @@ import org.junit.Test;
 
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
-import java.util.StringJoiner;
 
 public class ShowAllItemsActionTest {
     @Test
@@ -14,14 +13,12 @@ public class ShowAllItemsActionTest {
         ByteArrayOutputStream out = new ByteArrayOutputStream();
         PrintStream def = System.out;
         System.setOut(new PrintStream(out));
-        Tracker tracker = new Tracker();
+        MemTracker tracker = new MemTracker();
         Item item = new Item("fix bug");
         tracker.add(item);
         ShowAllitemsAction act = new ShowAllitemsAction();
         act.execute(new StubInput(new String[]{}), tracker);
-        String expect = new StringJoiner(System.lineSeparator(), "", System.lineSeparator())
-                .add(item.getId() + " " + item.getName())
-                .toString();
+        String expect = item.toString() + System.lineSeparator();
         assertThat(new String(out.toByteArray()), is(expect));
         System.setOut(def);
     }
