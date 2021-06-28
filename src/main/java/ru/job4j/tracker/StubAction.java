@@ -8,7 +8,7 @@ public class StubAction implements UserAction { //класс для загруз
     }
 
     @Override
-    public boolean execute(Input input, MemTracker tracker) {
+    public boolean execute(Input input, Store tracker) {
         call = true;
         return false;
     }

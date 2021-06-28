@@ -6,7 +6,7 @@ public class CreateAction implements UserAction {
         return "=== Create a new Item ====";
     }
     @Override
-    public boolean execute(Input input, MemTracker tracker) {
+    public boolean execute(Input input, Store tracker) {
         name();
         String name = input.askStr("Enter name:");
             Item item = new Item(name);

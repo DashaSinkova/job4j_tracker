@@ -9,7 +9,7 @@ public class ShowAllitemsAction implements UserAction {
     }
 
     @Override
-    public boolean execute(Input input, MemTracker tracker) {
+    public boolean execute(Input input, Store tracker) {
         name();
         List<Item> items = tracker.findAll();
         if (items.size() != 0) {
