@@ -12,7 +12,6 @@ public class StartUI {
         boolean run = true;
         while (run) {
             this.showMenu(actions);
-            //System.out.println();
                 int select = input.askInt("Select: ", actions.size());
                 UserAction action = actions.get(select);
                 run = action.execute(input, tracker);

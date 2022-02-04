@@ -1,4 +1,5 @@
 package ru.job4j.tracker;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
@@ -19,6 +20,17 @@ public class MemTracker implements Store{
     public Item add(Item item) {
         item.setId(this.generateId());
         items.add(item);
+
+        return item;
+    }
+       /** public Item add(Item item) {
+        item.setId(this.generateId());
+        items.add(item);
+        for (int i = 0; i < 10000000; i++) {
+            Item newItem = new Item(item.getName() + i, LocalDateTime.now());
+            newItem.setId(this.generateId());
+            items.add(newItem);
+        }
 
         return item;
     }

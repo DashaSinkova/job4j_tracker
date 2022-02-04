@@ -7,9 +7,11 @@ import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
 
 public class ShowAllItemsActionTest {
+    /**
+     *   заменяем стандартный вывод в консоль на вывод в память
+     */
     @Test
     public void whenCheckOutput() {
-        //заменяем стандартный вывод в консоль на вывод в память
         ByteArrayOutputStream out = new ByteArrayOutputStream();
         PrintStream def = System.out;
         System.setOut(new PrintStream(out));
